@@ -83,7 +83,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 1. ### Tipos escalares:
 
+
 - `String`: Armazena sequências de caracteres.
+
 
 ```php
 <?php
@@ -94,7 +96,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `string(5)` "Hello"
 
+
 - `Integer`: Armazena números inteiros.
+
 
 ```php
 <?php
@@ -105,7 +109,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `int(42)`
 
+
 - `Float`: Armazena números de ponto flutuante (números decimais).
+
 
 ```php
 <?php
@@ -117,7 +123,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `float(3.14)`
 
+
 - `Boolean`: Armazena valores de verdadeiro ou falso.
+
 
 ```php
 <?php
@@ -129,14 +137,15 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `bool(true)`
 
+
 - `NULL`: Armazena um valor nulo (ausência de valor).
 
-<?php 
+
 ```php
+<?php 
     $isNull = null;
     var_dump($isNull);
 ?>
-
 ```
 
 > `NULL`
@@ -144,7 +153,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 2. ### Tipos compostos:
 
+
 - `Array`: Armazena coleções de valores relacionados, acessíveis por chaves ou índices.
+
 
 ```php
 <?php 
@@ -155,7 +166,9 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `array(3)` { [`0`]=> `string(5)` "Apple" [`1`]=> `string(6)` "Banana" [`2`]=> `string(6)` "Orange" }
 
+
 - `Object`: Cria instâncias de classes, permitindo a definição de propriedades e métodos.
+
 
 ```php
 <?php 

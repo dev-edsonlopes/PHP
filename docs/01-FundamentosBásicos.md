@@ -131,12 +131,11 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 - `NULL`: Armazena um valor nulo (ausência de valor).
 
-<?php 
 ```php
+<?php 
     $isNull = null;
     var_dump($isNull);
 ?>
-
 ```
 
 > `NULL`

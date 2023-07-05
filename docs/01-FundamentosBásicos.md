@@ -141,6 +141,7 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `NULL`
 
+
 2. ### Tipos compostos:
 
 - `Array`: Armazena coleções de valores relacionados, acessíveis por chaves ou índices.
@@ -173,4 +174,118 @@ Os tipos de dados em PHP podem ser classificados em três categorias principais:
 
 > `object(Person)`#1 (2) { `["name"]`=> `string(11)` "Edson Lopes" `["age"]`=> `int(23)` }
 
+## Delimitação Strings
 
+- **Aspas simples**: Quando você usa aspas simples para delimitar uma string, o texto é interpretado literalmente, sem expandir variáveis ou caracteres de escape.
+
+Exemplo:
+
+```php
+<?php
+    $name = 'Edson Lopes';
+    $string = 'Olá, $name!'; // A variável $name não será expandida
+    echo $string;  
+?>
+
+```
+> Olá, `$name`!
+
+- **Aspas duplas**: Ao usar aspas duplas para delimitar uma string, o PHP expandirá as variáveis e interpretará sequências de escape dentro do texto.
+
+Exemplo:
+
+```php
+<?php
+    $name = 'Edson Lopes';
+    $string = "Olá, $name!"; // A variável $name será expandida
+    echo $string;
+?>
+```
+> Olá, Edson Lopes!
+
+- **Concatenação de strings**: Para unir várias strings, você pode usar o operador de concatenação (`.`) ou o operador de atribuição e concatenação (`.=`) para adicionar um trecho de texto ao final de uma string existente.
+
+Exemplo com operador de concatenação (`.`):
+
+```php
+<?php 
+    $greeting = 'Olá, ';
+    $name = 'João';
+    $string = $greeting . $name . '!'; // Concatenação das variáveis
+    echo $string;
+?>
+```
+> Olá, João!
+
+Exemplo com operador de atribuição e concatenação (`.=`):
+
+```php
+<?php 
+    $greeting = 'Olá, ';
+    $name = 'João';
+    $greeting .= $name; // Adiciona o valor da variável $name ao final da string $greeting
+    $greeting .= '!'; // Adiciona o ponto de exclamação
+    echo $greeting;
+?>
+```
+### Escopo de Variável
+
+O escopo de uma variável em PHP determina onde a variável pode ser acessada e usada dentro do código. Existem três tipos principais de escopo de variáveis em PHP: escopo global, escopo de função e escopo local.
+
+- **Escopo Global**: Variáveis declaradas fora de qualquer função têm escopo global, o que significa que podem ser acessadas em qualquer lugar do código, incluindo dentro de funções.
+Exemplo:
+
+```php
+<?php
+    $globalVariable = 10; // Variável global
+
+    function myFunction() {
+        global $globalVariable;
+        echo $globalVariable; // Acesso à variável global dentro da função
+    }
+    
+    myFunction(); // Saída: 10
+?>
+```
+
+- **Escopo de Função**: Variáveis declaradas dentro de uma função têm escopo de função, o que significa que elas só podem ser acessadas dentro da função em que foram declaradas.
+Exemplo:
+
+```php
+<?php
+    function myFunction() {
+        $functionVariable = 20; // Variável de função
+    
+        echo $functionVariable; // Acesso à variável de função dentro da função
+    }
+    
+    myFunction(); // Saída: 20
+    
+    echo $functionVariable; // Erro! A variável de função não pode ser acessada fora da função
+?>
+```
+
+## Constantes 
+
+As constantes em PHP são valores que não pode ser alterados durante a execução do script. Para definir uma constante em PHP, você pode usar a função `define()` ou a palavra-chave `const`. A diferença entre as duas é que `define()` pode ser usada em qualquer lugar do código, enquanto `const` só pode ser usada dentro de uma classes ou namespaces.
+
+Aqui está um exemplo de como definir uma constante usando` define()`:
+
+```php
+<?php
+define("NOME_CONSTANTE", "Valor da constante");
+
+echo NOME_CONSTANTE;
+?>
+```
+Aqui está um exemplo de como definir uma constante usando a palavra-chave `const`:
+
+```php
+<?php
+const NOME_CONSTANTE = "Valor da constante";
+
+echo NOME_CONSTANTE;
+?>
+```
+
+Importante observar que, ao contrário das variáveis, as constantes não têm um símbolo de cifrão (`$`).

@@ -1,6 +1,5 @@
 # Fundamentos Básicos
 
-
 ## PHP usando a tag `<?php>`
 
 Para executar um comando em PHP, você precisa envolvê-lo dentro da tag `<?php>`
@@ -15,6 +14,19 @@ Aqui está um exemplo de como você pode executar um comando básico de "Hello W
 ```
 
 > `echo` e `print` é dois comandos de saída em `php`
+## Executar o comando PHP
+
+1. **Execução na pasta**
+
+```csharp
+php index.php
+```
+
+2. **Executar no servidor**
+
+```csharp
+php -S localhost:8000
+```
 
 ## Comentários em PHP
 

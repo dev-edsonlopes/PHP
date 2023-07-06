@@ -25,7 +25,7 @@ Para criar um array em PHP, você pode usar a função `array()` ou a sintaxe de
 > Array ( [0] => Onix [1] => Sandero [2] => HB20 )
 
 ### Adicionando um Novo Valor ao Array
-Você pode adicionar um novo valor ao array usando a sintaxe $array[] = valor. O novo valor será adicionado automaticamente à próxima posição disponível do array.
+Você pode adicionar um novo valor ao array usando a sintaxe `$array[] = valor`. O novo valor será adicionado automaticamente à próxima posição disponível do array.
 
 ```php
 <?php 

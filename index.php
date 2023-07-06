@@ -13,16 +13,28 @@
             
             font-weight: 900;
             font-family: 'Courier New', Courier, monospace;
+            font-size: 22pt;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
     <?php
-        
+        $cars = array(
+            array("Marca" => "Ford", "Modelo" => "Fiesta", "Ano" => 2020),
+            array("Marca" => "Chevrolet", "Modelo" => "Onix", "Ano" => 2021),
+            array("Marca" => "Volkswagen", "Modelo" => "Gol", "Ano" => 2019)
+        );
 
-        $motos = array(1=> "Yamaha", 2=>"Honda");
-    $motos[10] = "Suzuki";
-    print_r($motos);
- ?>
+        foreach($cars as $car) {
+            foreach($car as $index => $value) {
+                echo "$index: $value <br />";
+            };
+            echo "<br />";
+        };
+    ?>
 </body>
 </html>

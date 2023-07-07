@@ -23,18 +23,10 @@
 </head>
 <body>
     <?php
-        $cars = array(
-            array("Marca" => "Ford", "Modelo" => "Fiesta", "Ano" => 2020),
-            array("Marca" => "Chevrolet", "Modelo" => "Onix", "Ano" => 2021),
-            array("Marca" => "Volkswagen", "Modelo" => "Gol", "Ano" => 2019)
-        );
-
-        foreach($cars as $car) {
-            foreach($car as $index => $value) {
-                echo "$index: $value <br />";
-            };
-            echo "<br />";
-        };
+       $nomes = array("Edson", "Gleydson", "Cristano", "Nivaldo", "Henrique");
+       foreach($nomes as $nome) {
+        echo "$nome<br />";
+       };
     ?>
 </body>
 </html>

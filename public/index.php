@@ -19,14 +19,24 @@
             align-items: center;
             justify-content: center;
         }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+        }
+        
+        input {
+            margin-bottom: 10px;
+            height: 22px;
+        }
     </style>
 </head>
 <body>
-    <?php
-       $nomes = array("Edson", "Gleydson", "Cristano", "Nivaldo", "Henrique");
-       foreach($nomes as $nome) {
-        echo "$nome<br />";
-       };
-    ?>
+    <form action="dados.php" methods="GET">
+    <a href="dados.php?nome=Edson&sobrenome=Lopes+da+Silva+Junior">
+        Enviar Dados
+    </a>
+    </form>
 </body>
 </html>

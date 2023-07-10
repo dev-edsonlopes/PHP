@@ -18,11 +18,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
-
+        
         form {
+            margin: 50px;
             display: flex;
             flex-direction: column;
+            
             width: 450px;
         }
         
@@ -30,13 +33,83 @@
             margin-bottom: 10px;
             height: 22px;
         }
-    </style>
+        
+        button {
+            border: none;
+            border-radius: 8px;
+            background-color: #7A86B8;
+            
+            height: 50px;
+            width: 225px ;
+            
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #7AFFB8;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        #executar {
+            font-size: 12pt;
+            
+            border: 1px 1px solid #7A86B8;
+        }
+        </style>
 </head>
+
 <body>
-    <form action="dados.php" methods="GET">
-    <a href="dados.php?nome=Edson&sobrenome=Lopes+da+Silva+Junior">
-        Enviar Dados
-    </a>
+    <div id="executar">
+    <?php 
+        if(isset($_POST['enviar-form'])):
+            $errors = array();
+
+            $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+            
+            $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT);
+            if(!$idade = filter_var( $idade, FILTER_VALIDATE_INT)) {
+                $errors[] = "Idade não correspondido";
+            };
+
+            $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+            if(!$email = filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "Email não correspondido";
+            };
+            
+            $peso = filter_input(INPUT_POST, 'peso', FILTER_SANITIZE_NUMBER_FLOAT);
+            if(!$peso = filter_var($peso, FILTER_VALIDATE_FLOAT)) {
+                $errors[] = "Peso não correspondido";
+            };
+
+            $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_URL);
+            if(!$url = filter_var( $url, FILTER_VALIDATE_URL)) {
+                $errors[] = "URL não correspondido";
+            };
+
+            if(!empty($errors)) {
+                foreach($errors as $error) {
+                    echo "<li><span style='color: red;'>$error</span></li>";
+                }
+            } else {
+                echo "<p style='color: #7AFFB8;'>Parabéns! Seu formulário foi enviado com êxito!</p>";
+            }
+        endif;
+    ?>
+    </div>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+        <label for="idade">Idade:</label>
+        <input type="text" name="idade" id="idade">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <label for="peso">Peso:</label>
+        <input type="text" name="peso" id="peso">
+        <label for="url">URL:</label>
+        <input type="text" name="url" id="url">
+        <button type="submit" name="enviar-form">Enviar</button>
     </form>
 </body>
 </html>

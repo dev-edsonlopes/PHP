@@ -43,7 +43,7 @@ Exemplo:
 ?>
 ```
 
-[Índices](https://www.php.net/manual/pt_BR/reserved.variables.server.php)
+[mais informações sobre os Índices $_SERVER](https://www.php.net/manual/pt_BR/reserved.variables.server.php)
 
 
 `$_GET`: Contém os parâmetros passados por meio da URL (query string) para o script PHP. Os parâmetros podem ser acessados usando a sintaxe `$_GET['nomeDoParametro']`.

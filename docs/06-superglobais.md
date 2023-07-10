@@ -95,13 +95,41 @@ Exemplo:
 
 > Seu nome é Edson e seu email é edson.eldsjr@gmail.com
 
+`$_FILES`: Contém informações sobre arquivos enviados por meio de um formulário HTML usando o atributo `enctype="multipart/form-data"`. Ele fornece acesso aos dados do arquivo, como nome, tipo, tamanho e localização temporária.
 
+```php
+<body>
+    <?php 
+        if(isset($_POST['enviar-formulário'])):
+            $formatosPermitidos = array("png", "jpeg", "jpg", "gif");
+            var_dump($_FILES);
+        endif;
+    ?>
 
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data"> <!-- Sem isso não tem upload de arquivos -->
+        <input type="file" name="arquivo" id="arquivo">
+        <input type="submit" name="enviar-formulário">
+    </form>
+</body>
+```
+
+> array(1) { 
+    > ["arquivo"]=> array(6) { 
+        > ["name"]=> string(0) "" 
+        > ["full_path"]=> string(0) "" 
+        > ["type"]=> string(0) "" 
+        > ["tmp_name"]=> string(0) "" 
+        > ["error"]=> int(4) 
+        > ["size"]=> int(0) 
+    > } 
+> }
 
 `$_REQUEST`: É uma combinação das superglobais `$_GET`, `$_POST` e `$_COOKIE`. Ele contém os dados enviados por meio da `URL`, dados de formulários `POST` e dados de cookies.
 
 `$_SESSION`: Contém as variáveis de sessão, que são usadas para armazenar dados entre várias requisições do mesmo usuário. Para usar a superglobal $_SESSION, é necessário iniciar a sessão com `session_start()`.
 
-`$_COOKIE`: Contém os dados dos cookies enviados pelo navegador para o script PHP. Os dados podem ser acessados usando a sintaxe `$_COOKIE`['nomeDoCookie'].
+```php
 
-`$_FILES`: Contém informações sobre arquivos enviados por meio de um formulário HTML usando o atributo `enctype="multipart/form-data"`. Ele fornece acesso aos dados do arquivo, como nome, tipo, tamanho e localização temporária.
+```
+
+`$_COOKIE`: Contém os dados dos cookies enviados pelo navegador para o script PHP. Os dados podem ser acessados usando a sintaxe `$_COOKIE`['nomeDoCookie'].

@@ -116,7 +116,7 @@ php -S localhost:5000
     ?>
 </body>
 ```
-![Erro](image\image.png)
+![Erro](./image/image.png)
 A função `mysqli_real_escape_string()` é uma função embutida no PHP que é usada para escapar de todos os caracteres especiais para uso em uma consulta SQL . É usado antes de inserir uma string em um banco de dados, pois remove quaisquer caracteres especiais que possam interferir nas operações de consulta.
 
 8. Verificando AUTENTICAÇÃO do usuário.
@@ -210,10 +210,10 @@ header('Location: ../index.php');
 
 Resultado do projeto:
 - Se não existir usuario cadastrado:
-![issetuser](image\image-1.png)
+![issetuser](./image/image-1.png)
 
 - Caso o usuario ou senha estejam incorretos:
-![Alt text](image\image-2.png)
+![Alt text](./image/image-2.png)
 
 - Caso os dados preenchidos estejam corretos
-![Alt text](image\image-3.png)
+![Alt text](./image/image-3.png)
